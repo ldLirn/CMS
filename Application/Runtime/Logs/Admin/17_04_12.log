@@ -1,0 +1,268 @@
+[ 2017-04-12T09:30:52+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001674s ]
+
+[ 2017-04-12T09:30:52+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001568s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001441s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002946s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001027s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001088s ]
+
+[ 2017-04-12T09:30:52+08:00 ] 127.0.0.1 /Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2017-04-12T09:31:00+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `admin_admin` [ RunTime:0.0378s ]
+SQL: SELECT * FROM `admin_admin` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0058s ]
+SQL: UPDATE `admin_admin` SET `lasttime`='1491960659',`lastip`='127.0.0.1',`loginnum`='68' WHERE `id` = 1 [ RunTime:0.0327s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0278s ]
+SQL: INSERT INTO `admin_log` (`node`,`node_name`,`uid`,`ip`,`time`) VALUES ('Login/login','登陆','1','127.0.0.1','1491960659') [ RunTime:0.0387s ]
+
+[ 2017-04-12T09:31:00+08:00 ] 127.0.0.1 /Admin/Login/verify.html?0.3989343527783291
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000796s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2017-04-12T09:31:01+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0187s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000270s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.012423s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001563s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011429s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009801s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000157s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001211s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001298s ]
+
+[ 2017-04-12T09:35:55+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000717s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.008932s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009417s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009496s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001258s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000894s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002265s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011867s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009496s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000034s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000162s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001031s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001133s ]
+
+[ 2017-04-12T11:41:34+08:00 ] 127.0.0.1 /Admin/Database/index/type/backups/nav_id/16.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001861s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001022s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001102s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0233s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0113s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW TABLE STATUS [ RunTime:0.1742s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000235s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.060324s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008167s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001840s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000977s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002913s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036860s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008243s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000017s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000041s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.025801s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001908s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001996s ]
+
+[ 2017-04-12T12:07:35+08:00 ] 127.0.0.1 /Admin/Database/backups.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001250s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0378s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0009s ]
+
+[ 2017-04-12T15:03:54+08:00 ] 127.0.0.1 /Admin/Database/index/type/backups/nav_id/16.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001330s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0372s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0115s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=9 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW TABLE STATUS [ RunTime:0.1577s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000207s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000349s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.081638s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037343s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037471s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.024176s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.008634s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.032947s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070726s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037471s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001570s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001699s ]
+

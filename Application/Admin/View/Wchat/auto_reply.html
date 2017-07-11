@@ -1,0 +1,91 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+    {$breadcrumb}
+<div class="graphs">
+    <div class="xs">
+        <h3>{$title}</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                <form class="form-horizontal" method="post" action="{:U('Wchat/auto_reply')}" id="defaultForm">
+
+                    <div class="form-group">
+                        <label for="navname" class="col-sm-2 control-label">关注回复内容</label>
+                        <div class="col-sm-8">
+                            <textarea name="follow" cols="50" rows="4" class="form-control1" style="height: 80px;" data-bv-field="value">{$data.follow}</textarea>
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-sm-2 control-label">自动回复(文本)</label>
+                        <div class="col-sm-8">
+                            <textarea name="auto_reply_text" cols="50" rows="4" class="form-control1" style="height: 80px;" data-bv-field="value">{$data.auto_reply_text}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-sm-2 control-label">自动回复(图片)</label>
+                        <div class="col-sm-8">
+                            <textarea name="auto_reply_img" cols="50" rows="4" class="form-control1" style="height: 80px;" data-bv-field="value">{$data.auto_reply_img}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-sm-2 control-label">自动回复(声音)</label>
+                        <div class="col-sm-8">
+                            <textarea name="auto_reply_voice" cols="50" rows="4" class="form-control1" style="height: 80px;" data-bv-field="value">{$data.auto_reply_voice}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-success">提交</button>
+                                <button type="reset" class="btn btn-inverse">返回</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <include file="Public:copyright" />
+</div>
+</div>
+
+
+<script>
+            $(document).ready(function() {
+                $('#defaultForm').bootstrapValidator({
+                            message: 'This value is not valid',
+                            feedbackIcons: {
+                                valid: 'glyphicon glyphicon-ok',
+                                invalid: 'glyphicon glyphicon-remove',
+                                validating: 'glyphicon glyphicon-refresh'
+                            },
+                            fields: {
+
+                            }
+                        })
+                        .on('success.form.bv', function(e) {
+                            // Prevent form submission
+                            e.preventDefault();
+
+                            // Get the form instance
+                            var $form = $(e.target);
+
+                            // Get the BootstrapValidator instance
+                            var bv = $form.data('bootstrapValidator');
+
+                            // Use Ajax to submit form data
+                            $.post($form.attr('action'), $form.serialize(), function(result) {
+                                layer.msg(result.info);
+                                if(result.status>0){
+                                    setTimeout(function(){
+                                        location.href= window.location.href;
+                                    },1500);
+                                }
+                            }, 'json');
+                        });
+            });
+
+</script>

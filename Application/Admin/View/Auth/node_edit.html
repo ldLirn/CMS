@@ -1,0 +1,146 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+    {$breadcrumb}
+<div class="graphs">
+    <div class="xs">
+        <h3>修改权限节点</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                <form class="form-horizontal" method="post" action="{:U('Auth/node_edit')}" id="defaultForm">
+                    <input type="hidden" name="id" value="{$data.id}">
+                    <div class="form-group">
+                        <label for="selector1" class="col-sm-2 control-label">所属栏目</label>
+                        <div class="col-sm-8">
+                            <select name="pid" id="selector1" class="form-control1">
+                                <option value="0" <if condition="$data['pid'] eq 0">selected</if> >顶级栏目</option>
+                                <volist name="rules" id="rule">
+                                    <option value="{$rule.id}" <if condition="$data['pid'] eq $rule['id']">selected</if> >{$rule.title}</option>
+                                    <volist name="rule.child" id="child">
+                                        <option value="{$child.id}" <if condition="$data['pid'] eq $child['id']">selected</if> >└─{$child.title}</option>
+                                    </volist>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">节点名称</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1" name="title" id="title" value="{$data.title}" placeholder="">
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">节点唯一标识</label>
+                        <div class="col-sm-8">
+                            <input  type="text" class="form-control1" name="name" id="name" value="{$data.name}" placeholder="例如:Auth/node">
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block">U方法地址</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status" class="col-sm-2 control-label">状态</label>
+                        <div class="col-sm-8">
+                            <div class="switch small" data-on="info" data-off="success">
+                                <input type="checkbox" checked  name="asd" value="{$data.status}"/>
+                                <input type="hidden" name="status" id="status" value="{$data.status}">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-success">提交</button>
+                                <button type="reset" class="btn btn-inverse">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <include file="Public:copyright" />
+</div>
+</div>
+
+
+<script>
+
+    $(function () {
+        $('[name="asd"]').bootstrapSwitch({
+            onText:"正常",
+            offText:"禁用",
+            onColor:"success",
+            offColor:"info",
+            size:"small",
+            onSwitchChange:function(event,state){
+                if(state==true){
+                    $(this).val("0");
+                    $('#status').val(0);
+                }else{
+                    $(this).val("1");
+                    $('#status').val(1);
+                }
+            }
+        })
+    })
+            $(document).ready(function() {
+                $('#defaultForm').bootstrapValidator({
+                            message: '无效的输入值',
+                            feedbackIcons: {
+                                valid: 'glyphicon glyphicon-ok',
+                                invalid: 'glyphicon glyphicon-remove',
+                                validating: 'glyphicon glyphicon-refresh'
+                            },
+                            fields: {
+                                pid: {
+                                    message: '请选择栏目',
+                                    validators: {
+                                        notEmpty: {
+                                            message: '请选择栏目'
+                                        },
+                                        regexp: {
+                                            regexp: /^[0-9]\d*$/,
+                                            message: '请选择正确的分组'
+                                        }
+                                    }
+                                },
+                                title:{
+                                    message: '标识名称必须填写',
+                                    validators: {
+                                        notEmpty: {
+                                            message: '标识名称必须填写'
+                                        }
+                                    }
+                                }
+                            }
+                        })
+                        .on('success.form.bv', function(e) {
+                            // Prevent form submission
+                            e.preventDefault();
+
+                            // Get the form instance
+                            var $form = $(e.target);
+
+                            // Get the BootstrapValidator instance
+                            var bv = $form.data('bootstrapValidator');
+
+                            // Use Ajax to submit form data
+                            $.post($form.attr('action'), $form.serialize(), function(result) {
+                                layer.msg(result.info);
+                                if(result.status>0){
+                                    setTimeout(function(){
+                                        location.href="{:U('Auth/node')}";
+                                    },1500);
+                                }
+                            }, 'json');
+                        });
+            });
+
+</script>

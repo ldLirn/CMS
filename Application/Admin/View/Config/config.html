@@ -1,0 +1,100 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+{$breadcrumb}
+<div class="col-md-12 graphs">
+    <div class="xs">
+        <h3>网站配置管理</h3>
+        <div style="background: #f5f5f5;width: 100%;height: 50px">
+            <ol class="breadcrumb" style="float: left;width: 20%">
+                <a class="btn btn-default" href="{:U('Config/add',array('nav_id'=>$_GET['nav_id']))}" role="button">添加配置</a>
+            </ol>
+
+                <div class="col-lg-4" style="float: right">
+                    <div class="input-group" style="background: #fff">
+                        <input type="text" class="form-control" placeholder="搜你想要的">
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+
+        </div>
+        <div class="bs-example4" data-example-id="contextual-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th><input type="checkbox" id="check_all">ID</th>
+                    <th>配置标识</th>
+                    <th>配置名称</th>
+                    <th>分组</th>
+                    <th>类型</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <volist name="data.list" id="v">
+                <tr class="active">
+                    <td><input type="checkbox" name="id[]" value="{$v.id}" class="check_all">{$v.id}</td>
+                    <td>{$v.name}</td>
+                    <td>{$v.title}</td>
+                    <td>{$v.type_name}</td>
+                    <td>{$v.data_type_name}</td>
+                    <td>
+                        <a class="btn btn-xs btn-info dialog" href="{:U('Config/edit',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}"  role="button">修改</a>
+                        <a class="btn btn-xs btn-danger delete" data-id="{$v.id}" role="button">删除</a>
+                    </td>
+                </tr>
+                </volist>
+
+                </tbody>
+            </table>
+        </div>
+        <nav>
+           {$data.show}
+        </nav>
+</div>
+    <include file="Public:copyright" />
+<script>
+
+    $(function () {
+
+        $('.delete').click(function () {
+            var id = $(this).data('id');
+            layer.confirm('您确定要删除此配置吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:U('Config/delete')}",{id:id},function (result) {
+                    layer.msg(result.info);
+                    if(result.status>0)
+                    {
+                        setTimeout(function(){
+                            location.href=location.href;
+                        },1500);
+                    }
+                })
+            }, function(){
+
+            });
+        })
+
+        $('#check_all').click(function () {
+            if($(this).prop('checked')){
+                $('.check_all').prop('checked','checked');
+            }else{
+                $('.check_all').prop('checked','');
+            }
+        })
+
+        $('.check_all').click(function () {
+            var all = $('.check_all').length;
+            var checked_all = $("input.check_all:checked").length;
+            if(all==checked_all){
+                $('#check_all').prop('checked','checked');
+            }else{
+                $('#check_all').prop('checked','');
+            }
+        })
+
+    })
+</script>

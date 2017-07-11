@@ -1,0 +1,76 @@
+{__NOLAYOUT__}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{:C('WEB_TITLE')}--{$page_title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="__ACSS__bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="__ACSS__style.css" rel='stylesheet' type='text/css' />
+<link href="__ACSS__font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="__ACSS__bootstrapValidator.css"/>
+<!-- jQuery -->
+<script src="__AJS__jquery.min.js"></script> 
+<!-- Bootstrap Core JavaScript -->
+<script type="text/javascript" src="__AJS__bootstrapValidator.min.js"></script>
+<script src="__AJS__bootstrap.min.js"></script>
+<script type="text/javascript" src="__CJS__layer/layer.js"></script>
+
+</head>
+<body id="login" style="min-height: 670px">
+  <div class="login-logo">
+    <a href="http://{$_SERVER['SERVER_NAME']}"><img src="__AIMG__logo.png" alt=""/></a>
+  </div>
+  <h2 class="form-heading">重置密码</h2>
+  <div class="app-cam">
+	  <form action="{:U('Login/reset_act')}" method="post" id="forgetForm">
+		<input type="password" class="text" placeholder="密码" name="password">
+		<input type="password" class="text" placeholder="重复密码" name="re_password">
+		<input type="hidden" name="email" value="{$mail}">
+		<input type="hidden" name="code" value="{$_GET['code']}">
+		<div class="submit"><input type="button" id="act_form"   value="确认"></div>
+		<div class="login-social-link">
+     
+        </div>
+		<ul class="new">
+			<li class="new_left"><p><a href="{:U('Login/login')}">去登陆</a></p></li>
+			<div class="clearfix"></div>
+		</ul>
+	</form>
+  </div>
+   <include file="Public:copyright"/>
+
+  <script>
+	  $(document).ready(function() {
+		  $('#act_form').click(function () {
+			  var password = $.trim($('input[name=password]').val())
+			  var re_password = $.trim($('input[name=re_password]').val())
+			  if(password=='' ||  re_password=='')
+			  {
+				  layer.msg('请填写完整的信息');
+				  return false;
+			  }
+			  if(re_password!=password){
+				  layer.msg('两次输入的密码不一致');
+				  return false;
+			  }
+
+			  var $form = $('#forgetForm');
+			  $.post($form.attr('action'), $form.serialize(), function(result) {
+				  layer.msg(result.info);
+				  if(result.status>0){
+					  setTimeout(function(){
+						  location.href="{:U('Login/login')}";
+					  },1500);
+				  }
+			  }, 'json');
+		  })
+	  });
+
+  </script>
+</body>
+</html>

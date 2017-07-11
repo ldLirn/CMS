@@ -1,0 +1,179 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+    {$breadcrumb}
+<div class="graphs">
+    <div class="xs">
+        <h3>添加网站配置</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                <form class="form-horizontal" method="post" action="{:U('Config/add')}" id="defaultForm">
+                    <div class="form-group">
+                        <label for="selector1" class="col-sm-2 control-label">所属分组</label>
+                        <div class="col-sm-8">
+                            <select name="type" id="selector1" class="form-control1">
+                            <option value="0">请选择分组</option>
+                            <volist name="config_type" key="k" id="v">
+                                <option value="{$k}">{$v}</option>
+                            </volist>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 control-label">配置标识</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1" name="name" id="name" placeholder="用于C函数调用，只能使用英文且不能重复">
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="col-sm-2 control-label">配置标题</label>
+                        <div class="col-sm-8">
+                            <input  type="text" class="form-control1" name="title" id="title" placeholder="用于后台显示的配置标题">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="data_type" class="col-sm-2 control-label">配置数据类型</label>
+                        <div class="col-sm-8">
+                            <select name="data_type" id="selector2" class="form-control1">
+                                <option value="0">请选择数据类型</option>
+                                <volist name="data_type" key="k" id="v">
+                                    <option value="{$k}">{$v}</option>
+                                </volist>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="change_hide" style="display: none">
+                        <label for="extra" class="col-sm-2 control-label label-input-sm">配置选项</label>
+                        <div class="col-sm-8">
+                            <input  type="text" class="form-control1" name="extra"  placeholder="例如: 0|关闭,1|开启 (逗号请使用英文半角)">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="value" class="col-sm-2 control-label label-input-sm">配置值</label>
+                        <div class="col-sm-8">
+                            <textarea name="value"  cols="50" rows="4" class="form-control1" style="height: 80px;"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="remark" class="col-sm-2 control-label label-input-sm">配置说明</label>
+                        <div class="col-sm-8">
+                            <textarea name="remark" id="remark" cols="100" rows="6" class="form-control1" style="height: 80px;"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-success">提交</button>
+                                <button type="reset" class="btn btn-inverse">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    <include file="Public:copyright" />
+</div>
+<script>
+    $('#selector2').change(function () {
+        if($(this).val()==2) {
+            $('#change_hide').show();
+        }else{
+            $('#change_hide').hide();
+        }
+    })
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $('#defaultForm').bootstrapValidator({
+                message: 'This value is not valid',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    name: {
+                        message: '配置标识不能为空',
+                        validators: {
+                            notEmpty: {
+                                message: '配置标识不能为空'
+                            },
+                                regexp: {
+                                    regexp: /^[a-zA-Z]+[a-zA-Z_]*$/,
+                                    message: '配置标识只能由字母开头，字母和下划线组成'
+                                }
+                        }
+                    },
+                    title:{
+                        message: '配置名称不能为空',
+                        validators: {
+                            notEmpty: {
+                                message: '配置名称不能为空'
+                            }
+                        }
+                    },
+                    type:{
+                        message: '请选择分组',
+                        validators: {
+                            regexp: {
+                                regexp: /^[1-9]\d*$/,
+                                message: '请选择分组'
+                            }
+                        }
+                    },
+                    data_type:{
+                        message: '请选择数据类型',
+                        validators: {
+                            regexp: {
+                                regexp: /^[1-9]\d*$/,
+                                message: '请选择数据类型'
+                            }
+                        }
+                    },
+                    value:{
+                        message: '请填写配置值',
+                        validators: {
+                            notEmpty: {
+                                message: '配置值不能为空'
+                            }
+                        }
+                    }
+                }
+            })
+            .on('success.form.bv', function(e) {
+                // Prevent form submission
+                e.preventDefault();
+
+                // Get the form instance
+                var $form = $(e.target);
+
+                // Get the BootstrapValidator instance
+                var bv = $form.data('bootstrapValidator');
+
+                // Use Ajax to submit form data
+                $.post($form.attr('action'), $form.serialize(), function(result) {
+                    layer.msg(result.info);
+                    if(result.status>0){
+                        setTimeout(function(){
+                            location.href="{:U('Config/config')}";
+                        },2000);
+                    }
+                }, 'json');
+            });
+});
+
+</script>

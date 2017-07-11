@@ -1,0 +1,96 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+    {$breadcrumb}
+    <div class="col-md-12 graphs">
+        <div class="xs">
+            <h3>{$title}</h3>
+            <div>
+                <ol class="breadcrumb">
+                    <li><a role="button" class="btn btn-default" href="{:U('Article/cate_add',array('nav_id'=>$_GET['nav_id']))}">添加分类</a></li>
+                </ol>
+            </div>
+            <div class="bs-example4" data-example-id="contextual-table">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>分类名称</th>
+                        <th>描述</th>
+                        <th>排序</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <form method="post" action="{:U('Article/sort')}" id="defaultForm">
+                        <volist name="data" id="v">
+                            <tr class="active">
+                                <td>{$v.name}</td>
+                                <td>{$v.description}</td>
+                                <td>
+                                    <input type="hidden" name="id[]" value="{$v.id}">
+                                    <input type="text" name="sort[]" value="{$v.sort}" class="form-control1 input-sm" id="smallinput" style="width: 40px;height: 25px;"></td>
+
+                                <td>
+                                    <a class="btn btn-xs btn-info" href="{:U('Article/cate_edit/',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                                    <button type="button" class="btn btn-xs btn-warning warning_44">删除</button>
+                                </td>
+                            </tr>
+                            <volist name="v.child" id="child">
+                                <tr class="active">
+                                    <td style="padding-left: 60px;">  └─{$child.name}</td>
+                                    <td>{$child.description}</td>
+                                    <td>
+                                        <input type="hidden" name="id[]" value="{$child.id}">
+                                        <input type="text" name="sort[]" value="{$child.sort}" class="form-control1 input-sm" id="" style="width: 40px;height: 25px;">
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-xs btn-info" href="{:U('Article/cate_edit/',array('id'=>$child['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                                        <button type="button" class="btn btn-xs btn-warning warning_44">删除</button>
+                                    </td>
+                                </tr>
+                            </volist>
+                        </volist>
+
+                    </tbody>
+                </table>
+
+                <button type="submit" class="btn btn-xs btn-warning" id="update_sort">更新排序</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $('#defaultForm').bootstrapValidator({
+                    message: 'This value is not valid',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+
+                    }
+                })
+                        .on('success.form.bv', function(e) {
+                            // Prevent form submission
+                            e.preventDefault();
+
+                            // Get the form instance
+                            var $form = $(e.target);
+
+                            // Get the BootstrapValidator instance
+                            var bv = $form.data('bootstrapValidator');
+
+                            // Use Ajax to submit form data
+                            $.post($form.attr('action'), $form.serialize(), function(result) {
+                                layer.msg(result.info);
+                                if(result.status>0)
+                                {
+                                    setTimeout(function(){
+                                        window.location = window.location
+                                    },1500);
+                                }
+                            }, 'json');
+                        });
+            });
+
+        </script>

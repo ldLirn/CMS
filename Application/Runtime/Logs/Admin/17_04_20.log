@@ -1,0 +1,352 @@
+[ 2017-04-20T11:38:05+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001507s ]
+
+[ 2017-04-20T11:38:05+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.075946s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.076064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.001132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001239s ]
+
+[ 2017-04-20T11:38:06+08:00 ] 127.0.0.1 /Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001272s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001388s ]
+
+[ 2017-04-20T11:38:14+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000608s ]
+
+[ 2017-04-20T11:38:14+08:00 ] 127.0.0.1 /Admin/Login/verify.html?0.8369988912434962
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000413s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000746s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2017-04-20T11:38:20+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: SHOW COLUMNS FROM `admin_admin` [ RunTime:0.0188s ]
+SQL: SELECT * FROM `admin_admin` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0012s ]
+SQL: UPDATE `admin_admin` SET `lasttime`='1492659500',`lastip`='127.0.0.1',`loginnum`='69' WHERE `id` = 1 [ RunTime:0.0253s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0260s ]
+SQL: INSERT INTO `admin_log` (`node`,`node_name`,`uid`,`ip`,`time`) VALUES ('Login/login','登陆','1','127.0.0.1','1492659500') [ RunTime:0.0441s ]
+
+[ 2017-04-20T11:38:21+08:00 ] 127.0.0.1 /Admin/Login/verify.html?0.10339361653249557
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000942s ]
+
+[ 2017-04-20T11:38:22+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000723s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0529s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000204s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000278s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.047729s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008169s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000507s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001045s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009396s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000155s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003755s ]
+
+[ 2017-04-20T11:38:25+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001218s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001346s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0177s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0297s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `admin_article_cate` ORDER BY sort asc  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000244s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.008519s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008542s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000437s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000487s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001013s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009858s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008542s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000047s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000362s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001233s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001347s ]
+
+[ 2017-04-20T11:38:58+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0059s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0048s ]
+
+[ 2017-04-20T11:39:18+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0180s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0547s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0049s ]
+
+[ 2017-04-20T11:39:29+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000620s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0058s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0049s ]
+
+[ 2017-04-20T11:39:50+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001065s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0051s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0062s ]
+
+[ 2017-04-20T11:40:03+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0050s ]
+
+[ 2017-04-20T11:40:09+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000471s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000696s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000766s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0051s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0052s ]
+
+[ 2017-04-20T11:40:09+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0054s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0048s ]
+
+[ 2017-04-20T11:40:09+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000421s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000697s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0058s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0054s ]
+
+[ 2017-04-20T11:40:10+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000489s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0053s ]
+
+[ 2017-04-20T11:40:10+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0053s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0050s ]
+
+[ 2017-04-20T11:55:49+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000905s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0087s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0061s ]
+
+[ 2017-04-20T15:43:44+08:00 ] 127.0.0.1 /Admin/Article/cate/nav_id/25/qsx/dfhifdsad
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.035110s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001436s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0347s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0114s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=10 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_article` [ RunTime:0.0291s ]
+SQL: SHOW COLUMNS FROM `admin_article_cate` [ RunTime:0.0092s ]
+

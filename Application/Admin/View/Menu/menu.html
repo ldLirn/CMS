@@ -1,0 +1,73 @@
+<script type="text/javascript" src="__AJS__jquery.blockUI.js"></script>
+<!-- Navigation -->
+<nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{:U('Index/index')}">LIRNCms</a>
+    </div>
+    <!-- /.navbar-header -->
+    <ul class="nav navbar-nav navbar-right">
+
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="__AIMG__1.png"><span class="badge"></span></a>
+            <ul class="dropdown-menu">
+                <li class="dropdown-menu-header text-center">
+                    <strong>{$Think.Session.username}</strong>
+                </li>
+                <li class="m_2"><a href="/" target="_blank"><i class="fa fa-file"></i>前台首页</a></li>
+                <li class="m_2"><a href="{:U('Index/clear')}"><i class="fa fa-refresh"></i>清除缓存</a></li>
+                <li class="m_2"><a href="{:U('Index/config')}"><i class="fa fa-wrench"></i>设置</a></li>
+                <li class="m_2"><a href="javascript:void(0)" id="block"><i class="fa fa-shield"></i>锁屏</a></li>
+                <li class="m_2"><a href="{:U('Login/loginOut')}"><i class="fa fa-lock"></i>退出</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse">
+            <ul class="nav" id="side-menu">
+                <li>
+                    <a href="{:U('Index/index')}"><i class="fa fa-dashboard fa-fw nav_icon"></i>首页</a>
+                </li>
+                <volist name="menuListData" id="v">
+                    <li>
+                        <a href="{$v.href}"><i class="fa {$v.navicon} nav_icon"></i>{$v.navname}<span class="fa arrow"></span></a>
+                        <if condition="count($v.child) gt 0">
+                            <ul class="nav nav-second-level">
+                                <volist name="v.child" id="child">
+                                    <li>
+                                        <a href="{:U($child['href'],array('nav_id'=>$child['id']))}">{$child.navname}</a>
+                                    </li>
+                                </volist>
+                            </ul>
+                        </if>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+    <!-- /.navbar-static-side -->
+</nav>
+<script>
+    $('ul.navbar-right').click(function () {
+        if( $('ul.navbar-right li.dropdown').hasClass('open')){
+            $('ul.navbar-right li.dropdown').removeClass('open');
+        }else{
+            $('ul.navbar-right li.dropdown').addClass('open');
+        }
+    })
+    $(function(){
+        $('#block').click(function () {
+            $.blockUI({ message: '<h1>锁屏中。。。</h1>' });
+        })
+    })
+    $('#unblock').click(function() {
+        alert(12)
+        $.unblockUI();
+    });
+</script>

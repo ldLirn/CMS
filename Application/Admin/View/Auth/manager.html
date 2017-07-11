@@ -1,0 +1,94 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+{$breadcrumb}
+<div class="col-md-12 graphs">
+    <div class="xs">
+        <h3>管理员列表</h3>
+        <div>
+            <ol class="breadcrumb">
+                <li><a class="btn btn-default" href="{:U('Auth/manager_add',array('nav_id'=>$_GET['nav_id']))}" role="button">添加管理员</a></li>
+            </ol>
+        </div>
+        <div class="bs-example4" data-example-id="contextual-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>邮箱</th>
+                    <th>分组</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <volist name="list.list" id="v">
+                <tr class="active">
+                    <td>{$v.id}</td>
+                    <td>{$v.username}</td>
+                    <td>{$v.email}</td>
+                    <td>{$v.title}</td>
+                   <td>
+                        <div class="switch small" data-on="info" data-off="success">
+                            <input type="checkbox" <if condition="$v.status eq 0">checked</if>  name="status" data-id="{$v.id}" value="{$v.status}"/>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-xs btn-info dialog" href="{:U('Auth/manager_edit',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}"  role="button">修改</a>
+                        <a class="btn btn-xs btn-danger delete" data-id="{$v.id}" role="button">删除</a>
+                    </td>
+                </tr>
+                </volist>
+
+                </tbody>
+            </table>
+        </div>
+</div>
+<script>
+
+    $(function () {
+        $('[name="status"]').bootstrapSwitch({
+            onText:"正常",
+            offText:"禁用",
+            onColor:"success",
+            offColor:"warning",
+            size:"small",
+            onSwitchChange:function(event,state){
+                var id = $(this).data('id');
+                if(state==true){
+                    $(this).val("0");
+                    var status = 0;
+                }else{
+                    $(this).val("1");
+                    var status = 1;
+                }
+                $.post("{:U('Auth/manager_status')}",{status:status,id:id},function (result) {
+                    if(result.status<=0)
+                    {
+                        layer.msg(result.info);
+                    }
+                })
+            }
+        })
+
+        $('.delete').click(function () {
+            var id = $(this).data('id');
+            layer.confirm('您确定要删除此管理员吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:U('Auth/manager_delete')}",{id:id},function (result) {
+                    layer.msg(result.info);
+                    if(result.status>0)
+                    {
+                        setTimeout(function(){
+                            location.href=location.href;
+                        },2000);
+                    }
+                })
+            }, function(){
+
+            });
+        })
+    })
+</script>

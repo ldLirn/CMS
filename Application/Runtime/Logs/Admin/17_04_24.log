@@ -1,0 +1,669 @@
+[ 2017-04-24T15:29:37+08:00 ] 127.0.0.1 /admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.017901s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+
+[ 2017-04-24T15:29:37+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000111s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073309s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001252s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.002501s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003883s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001182s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001249s ]
+
+[ 2017-04-24T15:29:38+08:00 ] 127.0.0.1 /Admin/Login/verify.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000682s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2017-04-24T15:29:45+08:00 ] 127.0.0.1 /Admin/Login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `admin_admin` [ RunTime:0.1154s ]
+SQL: SELECT * FROM `admin_admin` WHERE `username` = 'admin' LIMIT 1   [ RunTime:0.0021s ]
+SQL: UPDATE `admin_admin` SET `lasttime`='1493018984',`lastip`='127.0.0.1',`loginnum`='70' WHERE `id` = 1 [ RunTime:0.0606s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0324s ]
+SQL: INSERT INTO `admin_log` (`node`,`node_name`,`uid`,`ip`,`time`) VALUES ('Login/login','登陆','1','127.0.0.1','1493018984') [ RunTime:0.0469s ]
+
+[ 2017-04-24T15:29:45+08:00 ] 127.0.0.1 /Admin/Login/verify.html?0.7629757916784488
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000635s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000711s ]
+
+[ 2017-04-24T15:29:46+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000492s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000564s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0298s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0100s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000213s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.009165s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000375s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000335s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000793s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000147s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001267s ]
+
+[ 2017-04-24T15:29:53+08:00 ] 127.0.0.1 /Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0046s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000199s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.007291s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008152s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008227s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008227s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000015s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000037s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001534s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001926s ]
+
+[ 2017-04-24T15:30:08+08:00 ] 127.0.0.1 /Admin/Wchat/fans_list/nav_id/20.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001392s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001497s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0059s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=20 ) LIMIT 1   [ RunTime:0.0362s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0108s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_group_list` [ RunTime:0.0271s ]
+SQL: SELECT * FROM `admin_wechat_group_list` LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_wechat_group_list` LIMIT 1   [ RunTime:0.0175s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000259s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000152s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.050167s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000332s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000807s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000013s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000032s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000301s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001163s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001254s ]
+
+[ 2017-04-24T15:30:20+08:00 ] 127.0.0.1 /Admin/Wchat/wchat_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0175s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `admin_auth_rule` [ RunTime:0.0234s ]
+SQL: SELECT * FROM `admin_auth_rule` WHERE `name` = 'Wchat/wchat_list' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0054s ]
+SQL: INSERT INTO `admin_log` (`node`,`node_name`,`uid`,`ip`,`time`) VALUES ('操作url：/Admin/Wchat/wchat_list.html','未定义节点','1','127.0.0.1','1493019019') [ RunTime:0.0739s ]
+NOTIC: [8] Undefined index: wxupover F:\tp\Application\Admin\Controller\WchatController.class.php 第 47 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032515s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000344s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2017-04-24T15:30:23+08:00 ] 127.0.0.1 /Admin/Wchat/wchat_list/wxupover/y.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000637s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0057s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `admin_auth_rule` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_auth_rule` WHERE `name` = 'Wchat/wchat_list' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `admin_log` [ RunTime:0.0053s ]
+SQL: INSERT INTO `admin_log` (`node`,`node_name`,`uid`,`ip`,`time`) VALUES ('操作url：/Admin/Wchat/wchat_list/wxupover/y.html','未定义节点','1','127.0.0.1','1493019023') [ RunTime:0.0403s ]
+NOTIC: [8] Undefined index: num F:\tp\Application\Admin\Controller\WchatController.class.php 第 76 行.
+SQL: SHOW COLUMNS FROM `admin_wechat_group_list` [ RunTime:0.0053s ]
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = 'oVIVgxAOQ9_DN1I7WlCLlr5fZrEE' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = 'oVIVgxJWJTLOrU8Ah3Jzc18nRA2k' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 2 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 2 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 3 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 3 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 4 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 4 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 5 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 5 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 6 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 6 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 7 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 7 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 8 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 8 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 9 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 9 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 10 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined offset: 10 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 11 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 11 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 12 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 12 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 13 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0001s ]
+NOTIC: [8] Undefined offset: 13 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 14 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 14 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 15 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 15 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 16 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 16 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 17 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 17 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 18 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 18 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined offset: 19 F:\tp\Application\Admin\Controller\WchatController.class.php 第 78 行.
+SQL: SELECT `openid` FROM `admin_wechat_group_list` WHERE `openid` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 19 F:\tp\Application\Admin\Controller\WchatController.class.php 第 80 行.
+NOTIC: [8] Undefined index: num F:\tp\Application\Admin\Controller\WchatController.class.php 第 98 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006366s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000289s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001137s ]
+
+[ 2017-04-24T15:30:26+08:00 ] 127.0.0.1 /Admin/Wchat/fans_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000580s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_group_list` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `admin_wechat_group_list` WHERE `subscribe_time` = '' ORDER BY id desc LIMIT 20   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006304s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006378s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000472s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2017-04-24T15:30:29+08:00 ] 127.0.0.1 /Admin/Wchat/fans_list.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0048s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=0 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_group_list` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `admin_wechat_group_list` LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `admin_wechat_group_list` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000164s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000283s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000145s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.007500s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007937s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000679s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008919s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000018s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000038s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000289s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001755s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001856s ]
+
+[ 2017-04-24T15:30:34+08:00 ] 127.0.0.1 /Admin/Wchat/auto_reply/nav_id/21.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001776s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0084s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=21 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0072s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.006704s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009693s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000546s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000447s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000014s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000035s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001165s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002695s ]
+
+[ 2017-04-24T15:30:42+08:00 ] 127.0.0.1 /Admin/Wchat/menu/nav_id/22.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0119s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=22 ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_menu` [ RunTime:0.0559s ]
+SQL: SELECT * FROM `admin_wechat_menu` ORDER BY sort asc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+NOTIC: [8] Undefined index: href F:\tp\Application\Common\Common\function.php 第 176 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000190s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.011481s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009839s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009921s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000477s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000407s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011614s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009921s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000070s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000864s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001187s ]
+
+[ 2017-04-24T15:30:47+08:00 ] 127.0.0.1 /Admin/Wchat/keywords_reply/nav_id/23.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001195s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0061s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_keywords_reply` [ RunTime:0.0337s ]
+SQL: SELECT * FROM `admin_wechat_keywords_reply`  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.010768s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009706s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000783s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001501s ]
+NOTIC: [8] Undefined variable: data F:\tp\Application\Runtime\Cache\Admin\cb8debcb766d9fc77b81826b3c351fe0.php 第 92 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014360s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000024s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000049s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.003197s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000976s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001100s ]
+
+[ 2017-04-24T15:30:55+08:00 ] 127.0.0.1 /Admin/Wchat/keywords_edit/id/1/nav_id/23.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0058s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=23 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_keywords_reply` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `admin_wechat_keywords_reply` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000235s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.038911s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000844s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009984s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008879s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000012s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000053s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001143s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001230s ]
+
+[ 2017-04-24T15:31:02+08:00 ] 127.0.0.1 /Admin/Wchat/keywords_edit/id/4/nav_id/23.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `admin_menu` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=23 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`navname`,`pid` FROM `admin_menu` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: href F:\tp\Application\Admin\Controller\CommonController.class.php 第 83 行.
+SQL: SHOW COLUMNS FROM `admin_wchat_config` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `admin_wechat_keywords_reply` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `admin_wechat_keywords_reply` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000236s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000313s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000213s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.008469s ]
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Use of undefined constant child - assumed 'child' F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+NOTIC: [8] Array to string conversion F:\tp\Application\Runtime\Cache\Admin\35a1f0b5597e6e5280e7647b48c8daa1.php 第 77 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010121s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000411s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000396s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000905s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010121s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000019s ]
+INFO: Run Behavior\TokenBuildBehavior [ RunTime:0.000063s ]
+INFO: [ view_filter ] --END-- [ RunTime:-0.000557s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000931s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001064s ]
+

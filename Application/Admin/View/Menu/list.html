@@ -1,0 +1,133 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+{$breadcrumb}
+<div class="col-md-12 graphs">
+    <div class="xs">
+        <h3>菜单列表</h3>
+        <div class="bs-example4" data-example-id="contextual-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>菜单名称</th>
+                    <th>菜单说明</th>
+                    <th>菜单图标</th>
+                    <th>链接地址</th>
+                    <th>排序</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <form method="post" action="{:U('Menu/sort')}" id="defaultForm">
+                <volist name="menuListData" id="v">
+                <tr class="active">
+                    <td>{$v.navname}</td>
+                    <td>{$v.tip}</td>
+                    <td>{$v.navicon}</td>
+                    <td>{$v.href}</td>
+                    <td>
+                        <input type="hidden" name="id[]" value="{$v.id}">
+                        <input type="text" name="sort[]" value="{$v.sort}" class="form-control1 input-sm" id="smallinput" style="width: 40px;"></td>
+                    <td>
+                        <div class="switch small" data-on="info" data-off="success">
+                            <input type="checkbox" <if condition="$v.hide eq 0">checked</if>  name="hide" data-id="{$v.id}" value="{$v.hide}"/>
+                        </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-xs btn-info" href="{:U('Menu/edit/',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                        <!--<button type="button" class="btn btn-xs btn-warning warning_44">删除</button>-->
+                    </td>
+                </tr>
+                    <volist name="v.child" id="child">
+                        <tr class="active">
+                            <td style="padding-left: 60px;">  └─{$child.navname}</td>
+                            <td>{$child.tip}</td>
+                            <td>{$child.navicon}</td>
+                            <td>{$child.href}</td>
+                            <td>
+                                <input type="hidden" name="id[]" value="{$child.id}">
+                                <input type="text" name="sort[]" value="{$child.sort}" class="form-control1 input-sm" id="" style="width: 40px;"></td>
+                            <td>
+                                <div class="switch small" data-on="info" data-off="success">
+                                    <input type="checkbox" <if condition="$child.hide eq 0">checked</if>  name="hide" data-id="{$child.id}" value="{$child.hide}"/>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-xs btn-info" href="{:U('Menu/edit/',array('id'=>$child['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                                <!--<button type="button" class="btn btn-xs btn-warning warning_44">删除</button>-->
+                            </td>
+                        </tr>
+                    </volist>
+                </volist>
+
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-xs btn-warning" id="update_sort">更新排序</button>
+            </form>
+        </div>
+</div>
+<script>
+
+    $(function () {
+        $('[name="hide"]').bootstrapSwitch({
+            onText:"显示",
+            offText:"隐藏",
+            onColor:"success",
+            offColor:"info",
+            size:"small",
+            onSwitchChange:function(event,state){
+                var id = $(this).data('id');
+                if(state==true){
+                    $(this).val("0");
+                    var hide = 1;
+                }else{
+                    $(this).val("1");
+                    var hide = 0;
+                }
+                $.post("{:U('Menu/status')}",{hide:hide,id:id},function (result) {
+                    if(result.status<=0)
+                    {
+                        layer.msg(result.info);
+                    }
+                })
+            }
+        })
+    })
+
+    $(document).ready(function() {
+        $('#defaultForm').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+
+            }
+        })
+                .on('success.form.bv', function(e) {
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Get the form instance
+                    var $form = $(e.target);
+
+                    // Get the BootstrapValidator instance
+                    var bv = $form.data('bootstrapValidator');
+
+                    // Use Ajax to submit form data
+                    $.post($form.attr('action'), $form.serialize(), function(result) {
+                        layer.msg(result.info);
+                        if(result.status>0)
+                        {
+                            setTimeout(function(){
+                                window.location = window.location
+                            },1500);
+                        }
+                    }, 'json');
+                });
+    });
+
+</script>

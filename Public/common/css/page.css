@@ -1,0 +1,10 @@
+ul.pagination .current{
+    background-color: #ddd;
+    color:#000;
+}
+
+ul.pagination li.rows{
+    text-align: center;
+    line-height: 34px;
+    color: #23527c;
+}

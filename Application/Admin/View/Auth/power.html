@@ -1,0 +1,105 @@
+{:W('Admin/menu')}
+
+<div id="page-wrapper">
+{$breadcrumb}
+    <form method="post" action="{:U('Auth/power')}" id="defaultForm">
+        <input type="hidden" name="group_id" value="{$group_id}">
+    <volist name="rules" id="rule">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><label class="panel-title"><input type="checkbox" name="rule[]" id="item{$rule.id}" value="{$rule.id}" <in name="rule.id" value="$this_rules">checked</in> >{$rule.title}</label></h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <volist name="rule.child" id="child">
+                    <div class="form-group">
+                        <div class="col-sm-8">
+                            <div class="checkbox-inline"><label class="h5"><input type="checkbox" class="item{$rule.id}" name="rule[]" id="child{$child.id}" value="{$child.id}" <in name="child.id" value="$this_rules">checked</in> >{$child.title}</label></div><p></p>
+                            <volist name="child.child" id="v">
+                                <div class="checkbox-inline" style="padding-left: 40px;"><label><input type="checkbox" class="item{$rule.id}" name="rule[]" id="{$v.id}" value="{$v.id}" <in name="v.id" value="$this_rules">checked</in> >{$v.title}</label></div>
+                            <script>
+                                $('input#'+"{$v.id}").click(function () {
+                                    if($(this).prop('checked') ||  $('input#child'+"{$child.id}").parent().parent().next().nextAll().find('input:checked').size()>0){
+                                        $('#child'+"{$child.id}").prop('checked','checked')
+                                    }else{
+                                        $('#child'+"{$child.id}").prop('checked','')
+                                    }
+                                })
+                            </script>
+                            </volist>
+                        </div>
+                    </div>
+                        <p></p>
+                        <script>
+                            $('input#child'+"{$child.id}").click(function () {
+                                if($(this).prop('checked')){
+                                    $(this).parent().parent().next().nextAll().find('input').prop('checked','checked')
+                                }else{
+                                    $(this).parent().parent().next().nextAll().find('input').prop('checked','')
+                                }
+                            })
+                        </script>
+                    </volist>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('#item'+"{$rule.id}").click(function () {
+                if($(this).prop('checked')){
+                    $('.item'+"{$rule.id}").prop('checked','checked')
+                }else{
+                    $('.item'+"{$rule.id}").prop('checked','')
+                }
+            })
+        </script>
+    </volist>
+
+    <div class="panel-footer">
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <button type="submit" class="btn btn-success">提交</button>
+                <a class="btn  btn-warning" href="{$_SERVER['REQUEST_URI']}"  role="button">返回</a>
+            </div>
+        </div>
+    </div>
+    </form>
+    <script>
+        $(document).ready(function() {
+            $('#defaultForm').bootstrapValidator({
+                message: '无效的输入值',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    rule: {
+                        message: '请选择权限',
+                        validators: {
+                            notEmpty: {
+                                message: '请选择权限'
+                            }
+                        }
+                    }
+                }
+            })
+                    .on('success.form.bv', function(e) {
+                        // Prevent form submission
+                        e.preventDefault();
+                        // Get the form instance
+                        var $form = $(e.target);
+                        // Get the BootstrapValidator instance
+                        var bv = $form.data('bootstrapValidator');
+                        // Use Ajax to submit form data
+                        $.post($form.attr('action'), $form.serialize(), function(result) {
+                            layer.msg(result.info);
+                            if(result.status>0){
+                                setTimeout(function(){
+                                    location.href="{:U('Auth/group')}";
+                                },1500);
+                            }
+                        }, 'json');
+                    });
+        });
+    </script>
+<include file="Public:copyright" />

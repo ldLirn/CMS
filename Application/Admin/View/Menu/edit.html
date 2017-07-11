@@ -1,0 +1,172 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+    {$breadcrumb}
+<div class="graphs">
+    <div class="xs">
+        <h3>修改菜单</h3>
+        <div class="tab-content">
+            <div class="tab-pane active" id="horizontal-form">
+                <form class="form-horizontal" method="post" action="{:U('Menu/edit')}" id="defaultForm">
+                    <input type="hidden" name="id" value="{$data.id}">
+                    <div class="form-group">
+                        <label for="selector1" class="col-sm-2 control-label">所属类别</label>
+                        <div class="col-sm-8"><select name="pid" id="selector1" class="form-control1">
+                            <option value="0">顶级菜单</option>
+                            <volist name="menuListData" id="v">
+                                <option value="{$v.id}" <if condition="$data['pid'] eq $v['id']">selected='selected'</if> >{$v.navname}</option>
+
+                            </volist>
+
+                        </select></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="navname" class="col-sm-2 control-label">菜单名称</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1" value="{$data.navname}" name="navname" id="navname" placeholder="">
+                        </div>
+                        <div class="col-sm-2">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-sm-2 control-label">菜单icon样式</label>
+                        <div class="col-sm-8">
+                            <input  type="text" class="form-control1" value="{$data.navicon}" name="navicon" id="icon" placeholder="fa-jui">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="href" class="col-sm-2 control-label">菜单链接地址</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1" value="{$data.href}" name="href" id="href" placeholder="User/add">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="12" class="col-sm-2 control-label">状态</label>
+                        <div class="col-sm-8">
+                            <div class="switch small" data-on="info" data-off="success">
+                                <input type="checkbox"  name="asd" value="{$data.hide}" <if condition="$data['hide'] eq 0">checked</if> />
+                                <input type="hidden" name="hide" id="hide" value="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tip" class="col-sm-2 control-label label-input-sm">提示说明</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1 input-sm" name="tip" value="{$data.tip}" id="tip" placeholder="tip">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sort" class="col-sm-2 control-label label-input-sm">排序</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control1 input-sm" name="sort" id="sort" value="{$data.sort}" placeholder="sort">
+                        </div>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-offset-2">
+                                <button type="submit" class="btn btn-success">提交</button>
+                                <button type="reset" class="btn btn-inverse">重置</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <include file="Public:copyright" />
+</div>
+</div>
+
+
+<script>
+
+    $(function () {
+        $('[name="asd"]').bootstrapSwitch({
+            onText:"显示",
+            offText:"隐藏",
+            onColor:"success",
+            offColor:"info",
+            size:"small",
+            onSwitchChange:function(event,state){
+                if(state==true){
+                    $(this).val(0);
+                    $('#hide').val(0);
+                }else{
+                    $(this).val(1);
+                    $('#hide').val(1);
+                }
+            }
+        })
+    })
+            $(document).ready(function() {
+                $('#defaultForm').bootstrapValidator({
+                            message: 'This value is not valid',
+                            feedbackIcons: {
+                                valid: 'glyphicon glyphicon-ok',
+                                invalid: 'glyphicon glyphicon-remove',
+                                validating: 'glyphicon glyphicon-refresh'
+                            },
+                            fields: {
+                                navname: {
+                                    message: '菜单名称不能为空',
+                                    validators: {
+                                        notEmpty: {
+                                            message: '菜单名称不能为空'
+                                        }
+//                                        stringLength: {
+//                                            min: 6,
+//                                            max: 30,
+//                                            message: 'The username must be more than 6 and less than 30 characters long'
+//                                        },
+//                                        regexp: {
+//                                            regexp: /^[a-zA-Z0-9_\.]+$/,
+//                                            message: 'The username can only consist of alphabetical, number, dot and underscore'
+//                                        }
+                                    }
+                                },
+                                sort:{
+                                    message: '排序只能是数字类型',
+                                    validators: {
+                                        notEmpty: {
+                                            message: '排序不能为空'
+                                        },
+                                        stringLength: {
+                                            min: 1,
+                                            max: 10000,
+                                            message: '排序只能是1到10000之间'
+                                        },
+                                        regexp: {
+                                            regexp: /^\+?[1-9][0-9]*$/,
+                                            message: '数字只能是正整数'
+                                        }
+                                    }
+                                }
+                            }
+                        })
+                        .on('success.form.bv', function(e) {
+                            // Prevent form submission
+                            e.preventDefault();
+
+                            // Get the form instance
+                            var $form = $(e.target);
+
+                            // Get the BootstrapValidator instance
+                            var bv = $form.data('bootstrapValidator');
+
+                            // Use Ajax to submit form data
+                            $.post($form.attr('action'), $form.serialize(), function(result) {
+                                layer.msg(result.info);
+                                if(result.status>0){
+                                    setTimeout(function(){
+                                        location.href="{:U('Menu/lists')}";
+                                    },2000);
+                                }
+                            }, 'json');
+                        });
+            });
+
+</script>

@@ -1,0 +1,88 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+{$breadcrumb}
+<div class="col-md-12 graphs">
+    <div class="xs">
+        <h3>数据库还原</h3>
+        <div>
+
+        </div>
+        <div class="bs-example4" data-example-id="contextual-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>备份名称</th>
+                    <th>卷数</th>
+                    <th>压缩</th>
+                    <th>数据大小</th>
+                    <th>备份时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <volist name="list" id="v">
+                <tr class="active">
+                    <td>{$v.time|date='Ymd-His',###}</td>
+                    <td>{$data.part}</td>
+                    <td>{$data.compress}</td>
+                    <td>{$data.size|format_bytes}</td>
+                    <td>{$key}</td>
+                    <td>
+                        <a class="btn btn-xs btn-info dialog" href="{:U('Auth/manager_edit',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}"  role="button">修改</a>
+                        <a class="btn btn-xs btn-danger delete" data-id="{$v.id}" role="button">删除</a>
+                    </td>
+                </tr>
+                </volist>
+
+                </tbody>
+            </table>
+        </div>
+</div>
+<script>
+
+    $(function () {
+        $('[name="status"]').bootstrapSwitch({
+            onText:"正常",
+            offText:"禁用",
+            onColor:"success",
+            offColor:"warning",
+            size:"small",
+            onSwitchChange:function(event,state){
+                var id = $(this).data('id');
+                if(state==true){
+                    $(this).val("0");
+                    var status = 0;
+                }else{
+                    $(this).val("1");
+                    var status = 1;
+                }
+                $.post("{:U('Auth/manager_status')}",{status:status,id:id},function (result) {
+                    if(result.status<=0)
+                    {
+                        layer.msg(result.info);
+                    }
+                })
+            }
+        })
+
+        $('.delete').click(function () {
+            var id = $(this).data('id');
+            layer.confirm('您确定要删除此管理员吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:U('Auth/manager_delete')}",{id:id},function (result) {
+                    layer.msg(result.info);
+                    if(result.status>0)
+                    {
+                        setTimeout(function(){
+                            location.href=location.href;
+                        },2000);
+                    }
+                })
+            }, function(){
+
+            });
+        })
+    })
+</script>

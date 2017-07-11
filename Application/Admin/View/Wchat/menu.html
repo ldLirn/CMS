@@ -1,0 +1,120 @@
+{:W('Admin/menu')}
+<div id="page-wrapper">
+{$breadcrumb}
+<div class="col-md-12 graphs">
+    <div class="xs">
+        <h3>{$title}</h3>
+        <div>
+            <ol class="breadcrumb">
+                <li><a class="btn btn-default" href="{:U('Wchat/menu_add',array('nav_id'=>$_GET['nav_id']))}"  role="button">添加菜单</a></li>
+            </ol>
+        </div>
+        <div class="bs-example4" data-example-id="contextual-table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>菜单名称</th>
+                    <th>菜单类型</th>
+                    <th>链接值</th>
+                    <th>排序</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <form method="post" action="{:U('Wchat/menu_sort')}" id="defaultForm">
+                <volist name="data" id="v">
+                <tr class="active">
+                    <td>{$v.name}</td>
+                    <td>{$v.type}</td>
+                    <td>{$v.value}</td>
+                    <td>
+                        <input type="hidden" name="id[]" value="{$v.id}">
+                        <input type="text" name="sort[]" value="{$v.sort}" class="form-control1 input-sm" id="smallinput" style="width: 40px;height: 30px;"></td>
+                    <td>
+                        <a class="btn btn-xs btn-info" href="{:U('Wchat/menu_edit/',array('id'=>$v['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                        <button type="button" class="btn btn-xs btn-warning warning_44 delete" data-id="{$v.id}" data-pid="0">删除</button>
+                    </td>
+                </tr>
+                    <volist name="v.child" id="child">
+                        <tr class="active">
+                            <td style="padding-left: 60px;">└─{$child.name}</td>
+                            <td>{$child.type}</td>
+                            <td>{$child.value}</td>
+                            <td>
+                                <input type="hidden" name="id[]" value="{$child.id}">
+                                <input type="text" name="sort[]" value="{$child.sort}" class="form-control1 input-sm" id="" style="width: 40px;height:30px;">
+                            </td>
+
+                            <td>
+                                <a class="btn btn-xs btn-info" href="{:U('Wchat/menu_edit/',array('id'=>$child['id'],'nav_id'=>$_GET['nav_id']))}" role="button">修改</a>
+                                <button type="button" class="btn btn-xs btn-warning warning_44 delete" data-id="{$child.id}" data-pid="{$child.pid}">删除</button>
+                            </td>
+                        </tr>
+                    </volist>
+                </volist>
+
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-xs btn-warning" id="update_sort">更新排序</button>
+            </form>
+        </div>
+</div>
+<script>
+    $(function () {
+        $('.delete').click(function () {
+            var id = $(this).data('id');
+            var pid=$(this).data('pid');
+            layer.confirm('您确定要删除此菜单吗？', {
+                btn: ['确定','取消'] //按钮
+            }, function(){
+                $.post("{:U('Wchat/menu_delete')}",{id:id,pid:pid},function (result) {
+                    layer.msg(result.info);
+                    if(result.status>0)
+                    {
+                        setTimeout(function(){
+                            window.location = window.location
+                        },1500);
+                    }
+                })
+            }, function(){
+
+            });
+        })
+    });
+    $(document).ready(function() {
+        $('#defaultForm').bootstrapValidator({
+            message: 'This value is not valid',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+
+            }
+        })
+                .on('success.form.bv', function(e) {
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Get the form instance
+                    var $form = $(e.target);
+
+                    // Get the BootstrapValidator instance
+                    var bv = $form.data('bootstrapValidator');
+
+                    // Use Ajax to submit form data
+                    $.post($form.attr('action'), $form.serialize(), function(result) {
+                        layer.msg(result.info);
+                        if(result.status>0)
+                        {
+                            setTimeout(function(){
+                                window.location = window.location
+                            },1500);
+                        }
+                    }, 'json');
+                });
+    });
+
+</script>
